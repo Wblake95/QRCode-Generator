@@ -6,6 +6,7 @@ try: import validators
 except: print("Couldn't import package: validators. Please install and try again")
 
 # NOTE: try import qrcode-library
+# NOTE: try import pillows-library
 
 
 def check_args(url):
@@ -17,10 +18,12 @@ def check_args(url):
 
 
 # Check for input and execute
+# NOTE: see if there is a standard
 if not sys.stdin.isatty(): # Check if tty and has data
     print(1)
     #create_qrcode(sys.stdin.read().rstrip())
 
+# NOTE: move to argparse, since it is standard
 elif len(sys.argv) == 2: # Only one argument
     if check_args(sys.argv[1]):
         print(2)
